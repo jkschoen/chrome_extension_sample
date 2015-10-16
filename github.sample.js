@@ -2,8 +2,22 @@
 // @author Jacob Schoen
 // ==/UserScript==
 
-alert("Extension has Ran");
+function myAlert() {
+	alert("Extension has Ran");
+}
 
 
+//for direct page loads
+// myAlert();
 
+var s = document.createElement('script');
+// TODO: add "script.js" to web_accessible_resources in manifest.json
+s.src = chrome.extension.getURL('inject.js');
+s.onload = function() {
+    this.parentNode.removeChild(this);
+};
+(document.head||document.documentElement).appendChild(s);
+
+//still have to load this one for direct page loads
+myAlert();
 

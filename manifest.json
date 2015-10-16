@@ -4,6 +4,7 @@
     "version": "0.0.1",
     "description": "Sample",
     "permissions": [
+        "activeTab",
         "tabs", "<all_urls>",
         "http://github.com/*"
     ],
@@ -11,7 +12,8 @@
         {
             "matches": [ "https://github.com/*" ],
             "js": ["github.sample.js"],
-            "run_at": "document_end"
+            "run_at": "document_idle"
         }
-    ]
+    ],
+    "web_accessible_resources": ["inject.js"]
 }
