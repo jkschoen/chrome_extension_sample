@@ -1,3 +1,5 @@
 $(document).on('pjax:success', function() {
-  alert("it ran from the injected code");
+  var evt=document.createEvent("CustomEvent");
+	evt.initCustomEvent("pageLoadTransition", true, true, null);
+	document.dispatchEvent(evt);
 })

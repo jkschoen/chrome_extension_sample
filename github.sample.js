@@ -6,9 +6,7 @@ function myAlert() {
 	alert("Extension has Ran");
 }
 
-
-//for direct page loads
-// myAlert();
+window.addEventListener("pageLoadTransition", myAlert);
 
 var s = document.createElement('script');
 // TODO: add "script.js" to web_accessible_resources in manifest.json
